@@ -1,9 +1,6 @@
 var express = require('express');
+const Customer_controlers= require('../controllers/Customer');
 var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('Customer', { title: 'Search Result' });
-});
-
+/* GET Customers */
+router.get('/', Customer_controlers.Customer_view_all_Page );
 module.exports = router;

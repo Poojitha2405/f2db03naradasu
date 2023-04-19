@@ -2,10 +2,10 @@ extends layout
 
 block content
     h1= title
-    - let results=[{Cust_Name: "Poojitha",Cust_Age:21,Mail_Id:"npoojitha25@gmail.com"},{Cust_Name: "Mahesh",Cust_Age:25,Mail_Id:"MaheshP@gmail.com"},{Cust_Name: "Shannu",Cust_Age:30,Mail_Id:"ShannuSD@gmail.com"}]
+    
     div.container-fliud
         div.row
-            each item,ind in results 
+            each item,ind in results
                 div(class='col-sm-2' onclick=`buy(${ind})`) 
                     p Name  is #{item.Cust_Name}
                     p Age  is #{item.Cust_Age}

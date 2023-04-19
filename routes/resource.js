@@ -8,15 +8,15 @@ var Customer_controller = require('../controllers/Customer');
 router.get('/', api_controller.api);
 /// Customer ROUTES ///
 // POST request for creating a Costume.
-router.post('/Customers', Customer_controller.Customer_create_post);
+router.post('/customers', Customer_controller.Customer_create_post);
 // DELETE request to delete Costume.
-router.delete('/Customers/:id', Customer_controller.Customer_delete);
+router.delete('/customers/:id', Customer_controller.Customer_delete);
 // PUT request to update Costume.
-router.put('/Customers/:id', Customer_controller.Customer_update_put);
+router.put('/customers/:id', Customer_controller.Customer_update_put);
 // GET request for one Costume.
-router.get('/Customers/:id', Customer_controller.Customer_detail);
+router.get('/customers/:id', Customer_controller.Customer_detail);
 // GET request for list of all Costume items.
-router.get('/Customers', Customer_controller.Customer_list);
+router.get('/customers', Customer_controller.Customer_list);
 module.exports = router;
 // API for our resources
 exports.api = function(req, res) {

@@ -2,18 +2,29 @@ extends layout
 
 block content
     h1= title
-    
+    - let destination3 = `dispatch(\"/Customer/create\")`
+    button.btn( class="btn-success ml-1", onclick= destination3) Create Customer
     div.container-fliud
         div.row
             each item,ind in results
-                div(class='col-sm-2' onclick=`buy(${ind})`) 
+                - let destination = `dispatch(\"/Customer/update?id=${item._id}\")`
+                - let destination1 = `dispatch(\"/Customer/detail?id=${item._id}\")`
+                - let destination2 = `dispatch(\"/Customer/delete?id=${item._id}\")`
+                div(class='col-sm-2') 
                     p Name  is #{item.Cust_Name}
                     p Age  is #{item.Cust_Age}
                     p Mail_Id: #{item.Mail_Id}
-    each ite,index in results
-        p value at index #{index} is : #{ite.Cust_Name},#{ite.Cust_Age},#{ite.Mail_Id}
+                    button.btn( class="btn-primary ml-1", onclick= destination) Update
+                    button.btn( class="btn ml-1", onclick= destination1) Details
+                    button.btn( class="btn-danger ml-1", onclick= destination2) Delete
     script. 
         function buy(i){
             alert("You purchased item "+(i+1))
         }
+    script.
+        function dispatch(path){
+            window.location.href=path
+        }
+
+
         
